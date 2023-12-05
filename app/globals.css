@@ -1,0 +1,10 @@
+@import 'node_modules/locomotive-scroll/dist/locomotive-scroll';
+
+*, html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #D2C32E;
+}

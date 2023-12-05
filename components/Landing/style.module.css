@@ -1,0 +1,57 @@
+.landing {
+  height: 100vh;
+  width: 100%;
+  background: #D2C32E;
+  position: relative;
+}
+
+.left_courtain, .right_courtain {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 18rem;
+  background: #000000;
+  z-index: 1;
+}
+
+.left_courtain { 
+  left: 0; 
+  clip-path: polygon(0 0, 100% 0, 20% 100%, 0 100%);
+}
+
+.right_courtain { 
+  right: 0; 
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 20% 100%);
+}
+
+.title_wrapper {
+  position: absolute;
+  top: 15%;
+  left: 5.5%;
+  z-index: 3;
+}
+
+.title {
+  transform: rotate(-74deg);
+  font-style: italic;
+  font-size: 2.6rem;
+  color: #FFF3CB;
+}
+
+.music_player_wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.music_player {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  background: #000000;
+  z-index: 2;
+}
