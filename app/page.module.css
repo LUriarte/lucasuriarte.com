@@ -1,0 +1,17 @@
+.main {
+  height: 100%;
+  position: relative;
+}
+
+.frame {
+  width: calc(100vw - 2rem);
+  height: calc(100vh - 2rem);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2rem solid #000000;
+  user-select: none;
+  pointer-events: none;
+  z-index: 999;
+}

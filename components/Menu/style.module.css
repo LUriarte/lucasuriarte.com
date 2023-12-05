@@ -1,0 +1,18 @@
+.big_menu_wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: calc(100vh + 20rem);
+}
+
+.big_menu {
+  position: sticky;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  background: #000000;
+  z-index: 2;
+}
