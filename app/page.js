@@ -1,4 +1,4 @@
-'use client'
+// 'use client'
 import { useEffect } from 'react'
 import styles from './page.module.css'
 import Menu from '../components/Menu'
@@ -7,7 +7,14 @@ import Music from '../components/Music'
 import Texts from '../components/Texts'
 import About from '../components/About'
 
-export default function Home() {
+import { SliceZone } from "@prismicio/react";
+import { createClient } from "@/prismicio";
+import { components } from "@/slices";
+
+export default async function Home() {
+  const client = createClient();
+  const page = await client.getSingle("landing_page");
+
   useEffect( () => {
     (
       async () => {
@@ -18,13 +25,25 @@ export default function Home() {
   }, [])
 
   return (
-    <main className={styles.main}>
-      <div className={styles.frame}></div>
-      <Menu />
-      <Landing />
-      <Music />
-      <Texts />
-      <About />
-    </main>
+    <SliceZone slices={page.data.slices} components={components}>
+      <main className={styles.main}>
+        <div className={styles.frame}></div>
+        <Menu />
+        <Landing />
+        <Music />
+        <Texts />
+        <About />
+      </main>
+    </SliceZone>
   )
+}
+
+export async function generateMetadata() {
+  const client = createClient();
+  const page = await client.getSingle("landing_page");
+
+  return {
+    title: page.data.meta_title,
+    description: page.data.meta_description,
+  };
 }
