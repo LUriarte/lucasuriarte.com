@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         {children}
-        <PrismicPreview repositoryName={lucas-uriarte} />
+        <PrismicPreview repositoryName={'lucas-uriarte'} />
       </body>
     </html>
   )

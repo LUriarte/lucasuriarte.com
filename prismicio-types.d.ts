@@ -82,6 +82,36 @@ export type LandingPageDocument<Lang extends string = string> =
 
 export type AllDocumentTypes = LandingPageDocument;
 
+/**
+ * Default variation for SliceFolder Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SliceFolderSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *SliceFolder*
+ */
+type SliceFolderSliceVariation = SliceFolderSliceDefault;
+
+/**
+ * SliceFolder Shared Slice
+ *
+ * - **API ID**: `slice_folder`
+ * - **Description**: SliceFolder
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SliceFolderSlice = prismic.SharedSlice<
+  "slice_folder",
+  SliceFolderSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -96,6 +126,9 @@ declare module "@prismicio/client" {
       LandingPageDocumentData,
       LandingPageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      SliceFolderSlice,
+      SliceFolderSliceVariation,
+      SliceFolderSliceDefault,
     };
   }
 }
