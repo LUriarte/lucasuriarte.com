@@ -31,7 +31,6 @@ export default function Index() {
           // .to(introImage.current, {height: "200px"}, 0)
   }, [])
 
-
   return (
     <div className={styles.landing}>
       <div className={styles.left_courtain} ref={leftc}></div>
